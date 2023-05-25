@@ -3,10 +3,17 @@ import { renderPosts, renderPage } from "./modules/renderFunctions.js";
 import { clearPage } from "./modules/clearPage.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
-    const data = await getPageData(1);
+    let startId = 1;
+
+    if (window.location.href.split("=")[1] != undefined) {
+        startId = Number(window.location.href.split("=")[1]);
+    }
+
+
+    const data = await getPageData(startId);
     
     await renderPage();
-    await renderPosts(data, 1);
+    await renderPosts(data, startId);
 
     document.querySelectorAll("button").forEach(async (item, index) => {
         item.addEventListener("click", async () => {
@@ -18,4 +25,3 @@ document.addEventListener("DOMContentLoaded", async () => {
         })
     })
 });
-

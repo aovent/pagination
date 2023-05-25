@@ -33,7 +33,7 @@ main {
     transform: translate(-50%);
 
 
-    background: var(--submenus);
+    background: var(--menus);
 
     min-height: 100%;
 
@@ -53,13 +53,19 @@ main {
     flex-direction: column;
 
     top: 0%;
-    left: 0%;
+    left: -5%;
 
     transform: translate(-50%);
+
+    background: var(--menus);
+
+    padding: 0.5vh;
+
+    border: 0.3vh solid var(--text-first);
 }
 
 .page_buttons button {
-    background: var(--menus);
+    background: var(--submenus);
     color: var(--text-first);
 
     padding: 1vh;
@@ -82,6 +88,14 @@ main {
     margin-bottom: 5vh;
 }
 
+
+a {
+    text-decoration: none;
+}
+
+h1 a {
+    color: var(--title);
+}
 
 
 ::-webkit-scrollbar {

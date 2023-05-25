@@ -1,0 +1,48 @@
+.post_main {
+    position: absolute;
+
+    margin-top: 1vh;
+
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    min-width: 60%;
+    min-height: 60%;
+
+    padding: 3vh;
+
+    border-radius: var(--br);
+
+    text-align: center;
+
+    background: var(--submenus);
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.pm_title {
+    margin-bottom: 3vh;
+
+    color: var(--title);
+
+    text-transform: uppercase;
+}
+
+main a {
+    color: var(--text-first);
+    text-decoration: none;
+}
+
+main a:hover {
+    color: var(--hover-color1);
+}
+
+.back_button {
+    
+    cursor: pointer;
+}

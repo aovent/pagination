@@ -1,10 +1,10 @@
 const main = document.querySelector("main");
 
-export async function renderPosts(array, _activeButtonID) {
+export async function renderPosts(array, _activeButtonID, _pageNumber) {
     setActiveButton(_activeButtonID);
-    
+
     array.forEach(item => {
-        renderPost(item.title, item.body, item.id);
+        renderPost(item.title, item.body, item.id, _activeButtonID);
     })
 } 
 
@@ -28,24 +28,21 @@ export async function renderPage() {
     }
 }
 
-async function renderPost(_title, _body, _id) {
+async function renderPost(_title, _body, _id, _pageNumber) {
     let pageSection = document.querySelector(".page_section");
 
     let postDiv = document.createElement("div");
     postDiv.classList.add("post_div");
     pageSection.append(postDiv);
 
-    let h1title = document.createElement("a");
+    let h1title = document.createElement("h1");
     h1title.classList.add("post_title");
-    h1title.innerHTML = _title;
-    h1title.href = `post.html?id=${_id}`;
-    h1title.target = "_blank"
     postDiv.append(h1title);
 
-    let postBody = document.createElement("div");
-    postBody.classList.add("post_body");
-    postBody.innerHTML = _body;
-    postDiv.append(postBody);
+    let atitle = document.createElement("a");
+    atitle.innerHTML = _title;
+    atitle.href = `post.html?id=${_id}#${_pageNumber}`;
+    h1title.append(atitle);
 }
 
 async function setActiveButton(_id) {
